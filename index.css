@@ -1,77 +1,40 @@
-nav{
-    
-    align-items: center;
-    color:antiquewhite
+body {
+
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-image: url("https://example.com/path/to/your/image.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
-body{
-    background-color: rgb(50, 50, 59);
+
+
+h1 {
+    color: #333;
 }
 
-.navbar-brand{
-    color:antiquewhite
+div {
+    margin-bottom: 10px;
 }
 
-.content{
-    width: 40px;
+label {
+    display: inline-block;
+    width: 80px;
 }
 
-.img-fluid{
-    width: 60px;
-    height: 60px;
+input[type="text"] {
+    width: 200px;
+}
+
+button {
+    padding: 5px 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
     margin-bottom: 5px;
-    color: antiquewhite;
 }
-
-.dropdown-menu{
-    background-color: rgb(32, 32, 39);
-}
-
-.dropdown-item{
-    color:antiquewhite;
-    font-size: 12px;
-}
-
-.navbar {
-    position: relative; /* Ensure navbar is positioned relatively */
-    z-index: 1; /* Set a higher z-index to make the navbar appear on top of other elements */
-}
-  
-.custom-dropdown-menu {
-    position: absolute; /* Position the dropdown menu absolutely */
-    top: 100%; /* Place it below the parent nav-link */
-    left: 0; /* Align it with the parent nav-link */
-    z-index: 2; /* Set a higher z-index to make the dropdown menu appear above other elements */
-}
-
-.headlines{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-h1{
-    color: #d8d5d5;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    text-align: center;
-    font-style: italic;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-h2{
-    color: #d8d5d5;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    text-align: center;
-    font-style: italic;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.headlines h1, .headlines h2 {
-    display: block;
-  }
