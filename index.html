@@ -6,19 +6,14 @@
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="#">Fruits</a></li>
-        <li><a href="#">Vegetables</a></li>
-        <li><a href="#">Others</a></li>
-        <li><a href="#">User Profile</a></li>
-        <li><a href="#">Transactions History</a></li>
-        <li><a href="#">Store Addresses</a></li>
-      </ul>
-      <a href="#" class="cart-btn">Cart</a>
-    </nav>
+    <div class="cart-container">
+      <a href="#" class="cart-btn">
+        <img src="cart.png" alt="Cart" class="cart-img">
+        <span class="cart-text">Cart</span>
+      </a>
+    </div>
     <div class="logo">
-      <img src="logo.png" alt="Shuki's Yarkania Logo">
+      <img src="logo.png" alt="Shuki's Yarkania Logo" class="logo-img">
     </div>
   </header>
 
@@ -28,6 +23,26 @@
       <p>Choose from our wide selection of fresh fruits and vegetables!</p>
     </section>
   </main>
+
+  <div class="navigation left-navbar">
+    <nav>
+      <ul>
+        <li><a href="#">User Profile</a></li>
+        <li><a href="#">Transactions History</a></li>
+        <li><a href="#">Store Addresses</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="navigation right-navbar">
+    <nav>
+      <ul>
+        <li><a href="#">Fruits</a></li>
+        <li><a href="#">Vegetables</a></li>
+        <li><a href="#">Others</a></li>
+      </ul>
+    </nav>
+  </div>
 
   <script src="index.js"></script>
 </body>

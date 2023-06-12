@@ -3,13 +3,78 @@ header {
     background-color: #f5f5f5;
     padding: 10px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
   
-  nav {
-    width: 200px;
-    background-color: #f5f5f5;
+  .cart-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  .cart-text {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+  }
+  .cart-btn img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  .logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .logo img {
+    width: 250px;
+    height: auto;
+  }
+  
+  main {
+    margin-top: 120px; /* Adjust the margin to position the navigation bars in the middle */
+  }
+  
+  section {
     padding: 20px;
+    text-align: center;
+  }
+  
+  h2,
+  p {
+    margin: 0;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px; /* Adjust the margin to prevent content overlap with the navigation bars */
+  }
+  
+  .left-navbar {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .right-navbar {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  nav {
+    background-color: #333;
+    padding: 20px;
+    color: #fff;
   }
   
   nav ul {
@@ -24,34 +89,7 @@ header {
   
   nav ul li a {
     text-decoration: none;
-    color: #333;
-    padding: 5px;
-  }
-  
-  .cart-btn {
-    margin-top: 20px;
-    background-color: #333;
     color: #fff;
-    padding: 5px 10px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .logo {
-    margin-left: auto;
-  }
-  
-  .logo img {
-    width: 150px;
-    height: auto;
-  }
-  
-  section {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  h2, p {
-    margin: 0;
+    padding: 5px;
   }
   
