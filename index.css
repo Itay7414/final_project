@@ -5,6 +5,7 @@ header {
 }
 
 .cart-container {
+  margin-top: 5%;
   position: absolute;
   top: 10px;
   left: 10px;
@@ -38,11 +39,11 @@ header {
 
 .logo-container img {
   width: 250px;
-  height: auto; 
+  height: auto;
 }
 
 main {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 section {
