@@ -16,25 +16,16 @@ $(document).ready(function () {
     window.location.href = 'index.html';
   });
 
-  document.addEventListener('DOMContentLoaded', function () {
-    var userProfileBtn = document.getElementById('user-profile-btn');
-    if (userProfileBtn) {
-      userProfileBtn.addEventListener('click', function (event) {
-        event.preventDefault();
-        window.location.href = 'userprofile.html';
-      });
-    }
+  // Handle "User Profile" button click
+  $(document).on('click', '#user-profile-btn', function () {
+    window.location.href = 'userprofile.html';
   });
 
-
-  document.addEventListener('DOMContentLoaded', function () {
-    var welcomeFirstName = document.getElementById('welcome-firstname');
-    var storedFirstName = localStorage.getItem('firstName');
-    if (storedFirstName) {
-      welcomeFirstName.textContent = storedFirstName;
-    }
+  // Handle "Stores Addresses" button click
+  $(document).on('click', '#stores-addresses-btn', function () {
+    window.open('https://goo.gl/maps/b5cY9fv4N6wpfBug8');
+    window.open('https://goo.gl/maps/ALPT1hZNVEtnNrqu9');
   });
-
 
   // Fetch and display products based on category
   function fetchProducts(category, containerId) {
@@ -48,15 +39,6 @@ $(document).ready(function () {
       });
     });
   }
-
-
-  $(document).ready(function () {
-    $('#user-profile-btn').click(function (event) {
-      event.preventDefault();
-      window.location.href = 'userprofile.html';
-    });
-  });
-
 
   // Helper function to create a product card element
   function createProductCard(product) {
@@ -85,6 +67,7 @@ $(document).ready(function () {
     });
   }
 });
+
 // index.js
 $(document).ready(function () {
   $('.cart-btn').click(function () {
