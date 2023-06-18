@@ -1,33 +1,44 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // Fetch and display products for each category
   fetchProducts('fruits', 'fruits-container');
   fetchProducts('vegetables', 'vegetables-container');
   fetchProducts('others', 'others-container');
 
   // Handle "Add to Cart" button click
-  $(document).on('click', '.add-to-cart-btn', function() {
+  $(document).on('click', '.add-to-cart-btn', function () {
     var product = $(this).closest('.card').data('product');
     var amount = parseInt($(this).siblings('.amount-input').val());
     addToCart(product, amount);
   });
 
   // Handle "Back to Home" button click
-  $(document).on('click', '.back-to-home-btn', function() {
+  $(document).on('click', '.back-to-home-btn', function () {
     window.location.href = 'index.html';
   });
+  $(document).ready(function () {
+    $('#user-profile-btn').on('click', function () {
+      window.location.href = 'userprofile.html';
+    });
+  });
+
 
   // Fetch and display products based on category
   function fetchProducts(category, containerId) {
-    $.get('/api/products', { category: category }, function(products) {
+    $.get('/api/products', { category: category }, function (products) {
       var productContainer = $('#' + containerId);
       productContainer.empty();
 
-      products.forEach(function(product) {
+      products.forEach(function (product) {
         var card = createProductCard(product);
         productContainer.append(card);
       });
     });
   }
+  $(document).ready(function () {
+    $('#user-profile-btn').on('click', function () {
+      window.location.href = 'userprofile.html';
+    });
+  });
 
   // Helper function to create a product card element
   function createProductCard(product) {
@@ -50,7 +61,7 @@ $(document).ready(function() {
 
   // Add the "Add to Cart" functionality using AJAX calls to update the cart
   function addToCart(product, amount) {
-    $.post('/api/cart', { product: product, amount: amount }, function(response) {
+    $.post('/api/cart', { product: product, amount: amount }, function (response) {
       // Handle the response from the server
       console.log(response);
     });
