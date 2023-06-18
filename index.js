@@ -67,3 +67,9 @@ $(document).ready(function () {
     });
   }
 });
+// index.js
+$(document).ready(function () {
+  $('.cart-btn').click(function () {
+    window.location.href = 'cart.html'; // Change 'cart.html' to the desired page URL
+  });
+});
