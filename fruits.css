@@ -4,27 +4,11 @@ body {
   }
   
   header {
-    position: relative;
-    background-color: #ffffff;
-    padding: 10px;
-  }
-  
-  header img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .back-to-home-btn {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 60px;
-    height: 60px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
   }
   
   .back-to-home-btn img {
@@ -81,4 +65,17 @@ body {
     display: block;
     margin: 0 auto;
   }
+  .logo2-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-top: -5%;
+  }
   
+  .logo2-container img {
+    width: 250px;
+    height: auto;
+  }
