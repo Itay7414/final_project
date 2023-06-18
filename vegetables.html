@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <title>Vegetables</title>
-  <link rel="stylesheet" type="text/css" href="vegetables.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="vegetables.css">
+  <title>Online Vegetable Store</title>
 </head>
 
 <body>
@@ -18,20 +19,20 @@
   </div>
 
   <main>
-    <section id="vegetables-container" class="card-container">
+    <div class="scale-background"></div>
+    <section class="card-container">
       <div class="card">
-        <div class="scale-background"></div>
         <div class="card-img">
           <img src="carrot.png" alt="Carrot">
         </div>
         <div class="card-info">
-          <p class="text-title">Carrot</p>
-          <p class="text-body">$1.99 per pound</p>
+          <h2 class="text-title">Carrot</h2>
+          <p class="text-body">Price: $2.99 per pound</p>
           <div class="card-footer">
-            <span class="text-body">In Stock: 10 pounds</span>
+            <span class="text-body">In Stock: 15 pounds</span>
             <div class="card-input">
               <label for="carrot-weight">Weight (in pounds):</label>
-              <input type="number" id="carrot-weight" name="carrot-weight" min="0" max="10">
+              <input type="number" id="carrot-weight" name="carrot-weight" min="0" max="8">
             </div>
             <div class="card-button">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -45,20 +46,19 @@
           </div>
         </div>
       </div>
-
+      <!-- Add more vegetable cards below -->
       <div class="card">
-        <div class="scale-background"></div>
         <div class="card-img">
           <img src="tomato.png" alt="Tomato">
         </div>
         <div class="card-info">
-          <p class="text-title">Tomato</p>
-          <p class="text-body">$2.49 per pound</p>
+          <h2 class="text-title">Tomato</h2>
+          <p class="text-body">Price: $3.49 per pound</p>
           <div class="card-footer">
-            <span class="text-body">In Stock: 15 pounds</span>
+            <span class="text-body">In Stock: 10 pounds</span>
             <div class="card-input">
               <label for="tomato-weight">Weight (in pounds):</label>
-              <input type="number" id="tomato-weight" name="tomato-weight" min="0" max="15">
+              <input type="number" id="tomato-weight" name="tomato-weight" min="0" max="8">
             </div>
             <div class="card-button">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -74,13 +74,12 @@
       </div>
 
       <div class="card">
-        <div class="scale-background"></div>
         <div class="card-img">
           <img src="broccoli.png" alt="Broccoli">
         </div>
         <div class="card-info">
-          <p class="text-title">Broccoli</p>
-          <p class="text-body">$3.99 per pound</p>
+          <h2 class="text-title">Broccoli</h2>
+          <p class="text-body">Price: $1.99 per pound</p>
           <div class="card-footer">
             <span class="text-body">In Stock: 8 pounds</span>
             <div class="card-input">
@@ -101,18 +100,17 @@
       </div>
 
       <div class="card">
-        <div class="scale-background"></div>
         <div class="card-img">
-          <img src="spinach.png" alt="Spinach">
+          <img src="cucumber.jpg" alt="cucumber">
         </div>
         <div class="card-info">
-          <p class="text-title">Spinach</p>
-          <p class="text-body">$1.79 per pound</p>
+          <h2 class="text-title">Cucumber</h2>
+          <p class="text-body">Price: $2.49 per pound</p>
           <div class="card-footer">
-            <span class="text-body">In Stock: 12 pounds</span>
+            <span class="text-body">In Stock: 5 pounds</span>
             <div class="card-input">
-              <label for="spinach-weight">Weight (in pounds):</label>
-              <input type="number" id="spinach-weight" name="spinach-weight" min="0" max="12">
+              <label for="cucumber-weight">Weight (in pounds):</label>
+              <input type="number" id="cucumber-weight" name="cucumber-weight" min="0" max="5">
             </div>
             <div class="card-button">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -130,7 +128,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2023 Shuki's Yarkania. All rights reserved.</p>
+    <p>© 2023 Online Vegetable Store. All rights reserved.</p>
   </footer>
 </body>
 
