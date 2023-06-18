@@ -60,7 +60,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 60px; /* Adjust the margin to prevent content overlap with the navigation bars */
+  margin-bottom: 60px;
+  /* Adjust the margin to prevent content overlap with the navigation bars */
 }
 
 .left-navbar {
@@ -126,4 +127,16 @@ nav ul li a {
   width: 200px;
   height: auto;
   margin-bottom: 20px;
+}
+
+/* Your existing CSS styles */
+
+.welcome-message {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
 }

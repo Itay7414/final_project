@@ -51,4 +51,68 @@ main {
 .profile-info input[readonly] {
     background-color: #f7f7f7;
     cursor: not-allowed;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #ffffff;
+    }
+
+    .back-to-home-btn img {
+        width: 110px;
+        height: 70px;
+    }
+
+    main {
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .profile-container {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #f1f1f1;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-container h1 {
+        color: royalblue;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .profile-info {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .profile-info label {
+        font-weight: bold;
+    }
+
+    .profile-info input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .profile-info input[readonly] {
+        background-color: #f7f7f7;
+        cursor: not-allowed;
+    }
+
+    .edit-mode .profile-info input {
+        background-color: #fff;
+        cursor: text;
+    }
+
+    .edit-mode #edit-profile-btn {
+        display: none;
+    }
 }

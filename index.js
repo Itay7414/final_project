@@ -15,10 +15,24 @@ $(document).ready(function () {
   $(document).on('click', '.back-to-home-btn', function () {
     window.location.href = 'index.html';
   });
-  $(document).ready(function () {
-    $('#user-profile-btn').on('click', function () {
-      window.location.href = 'userprofile.html';
-    });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var userProfileBtn = document.getElementById('user-profile-btn');
+    if (userProfileBtn) {
+      userProfileBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        window.location.href = 'userprofile.html';
+      });
+    }
+  });
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var welcomeFirstName = document.getElementById('welcome-firstname');
+    var storedFirstName = localStorage.getItem('firstName');
+    if (storedFirstName) {
+      welcomeFirstName.textContent = storedFirstName;
+    }
   });
 
 
@@ -34,11 +48,15 @@ $(document).ready(function () {
       });
     });
   }
+
+
   $(document).ready(function () {
-    $('#user-profile-btn').on('click', function () {
+    $('#user-profile-btn').click(function (event) {
+      event.preventDefault();
       window.location.href = 'userprofile.html';
     });
   });
+
 
   // Helper function to create a product card element
   function createProductCard(product) {

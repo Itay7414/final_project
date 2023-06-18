@@ -19,16 +19,22 @@
             <h1>User Profile</h1>
             <div class="profile-info">
                 <label for="firstname">First Name:</label>
-                <input type="text" id="firstname" readonly value="John">
+                <input type="text" id="firstname" value="John">
 
                 <label for="lastname">Last Name:</label>
-                <input type="text" id="lastname" readonly value="Doe">
+                <input type="text" id="lastname" value="Doe">
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" readonly value="johndoe@example.com">
+                <input type="email" id="email" value="johndoe@example.com">
+
+                <button id="edit-profile-btn">Edit</button>
+                <button id="save-profile-btn">Save</button>
             </div>
         </div>
     </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="userprofile.js"></script>
 </body>
 
 </html>
