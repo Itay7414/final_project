@@ -74,3 +74,7 @@ $(document).ready(function () {
     window.location.href = 'cart.html'; // Change 'cart.html' to the desired page URL
   });
 });
+function openStoreMapPage() {
+  // Open a new page or redirect the user to the store map page
+  window.open("store_map.html", "_blank");
+}
