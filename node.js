@@ -1,14 +1,28 @@
 const { MongoClient } = require('mongodb');
 
-const uri = 'mongodb+srv://mosacho1408:<password>@cluster0.7ygedx4.mongodb.net/<database_name>?retryWrites=true&w=majority';
+// Connection URL
+const url = 'mongodb://localhost:27017'; // Replace with your actual MongoDB connection string
 
-MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
-    if (err) {
-        console.error('Failed to connect to the database:', err);
-        return;
-    }
+// Database and collection names
+const dbName = 'your-database-name';
+const collectionName = 'your-collection-name';
 
-    // Once connected, you can perform database operations here
-    const db = client.db('Cluster0');
-    // ...
+// Connect to MongoDB
+MongoClient.connect(url, function(err, client) {
+  if (err) {
+    console.error('Failed to connect to MongoDB:', err);
+    return;
+  }
+
+  console.log('Connected to MongoDB successfully');
+
+  // Get the database and collection
+  const db = client.db(dbName);
+  const collection = db.collection(collectionName);
+
+  // Perform database operations
+  // ...
+
+  // Close the MongoDB connection
+  client.close();
 });
