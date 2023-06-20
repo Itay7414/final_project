@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 // Import the User model
-const User = require('./user');
+const User = require('./users');
 
 // Connect to MongoDB
 mongoose
