@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 const port = 3000;
@@ -16,28 +17,40 @@ mongoose.connect('mongodb+srv://mosacho1408:Mosacho1408@cluster0.7ygedx4.mongodb
     console.log('Error connecting to the database:', error);
   });
 
-// Create a user schema and model
-const userSchema = new mongoose.Schema({
-  email: { type: String, required: true },
-  password: { type: String, required: true }
+// Middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cookieParser());
+
+// Create a cart schema and model
+const cartSchema = new mongoose.Schema({
+  product: { type: String, required: true },
+  weight: { type: Number, required: true }
 });
 
-const User = mongoose.model('User', userSchema);
+const Cart = mongoose.model('Cart', cartSchema);
 
-// Set up the signup route
-app.post('/signup', (req, res) => {
-  const { email, password } = req.body;
+// Set up the route to handle adding items to the cart
+app.post('/add-to-cart', (req, res) => {
+  const { product, weight } = req.body;
 
-  // Create a new user
-  const newUser = new User({ email, password });
+  // Validate the product and weight
+  if (!product || !weight || isNaN(parseFloat(weight)) || parseFloat(weight) <= 0) {
+    res.status(400).json({ error: 'Invalid product or weight' });
+    return;
+  }
 
-  // Save the user to the database
-  newUser.save()
+  // Create a new cart item
+  const newCartItem = new Cart({ product, weight });
+
+  // Save the cart item to the database
+  newCartItem.save()
     .then(() => {
-      res.send('User registered successfully');
+      res.send('Item added to cart successfully');
     })
     .catch((error) => {
-      res.status(500).send('Error registering user');
+      console.log('Error adding item to cart:', error);
+      res.status(500).send('Error adding item to cart');
     });
 });
 
