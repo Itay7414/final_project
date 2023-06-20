@@ -108,6 +108,7 @@ header {
   }
   
   .form-container .form-submit-btn {
+    margin-top: 10px; 
     background-color: #1778f2;
     color: #fff;
     border: none;
