@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
     <link rel="stylesheet" type="text/css" href="signup.css">
 </head>
+
 <body>
     <header>
         <a href="index.html" class="back-to-home-btn">
@@ -16,14 +18,14 @@
     </div>
     <main>
         <div class="form-container">
-            <form id="signup-form" class="form">
+            <form action='/signup' method='post'>
                 <p class="form-title">Sign up for an account</p>
                 <div class="input-container">
-                    <input type="email" placeholder="Enter email" id="email">
+                    <input type="email" placeholder="Enter email" name="email">
                     <span></span>
                 </div>
                 <div class="input-container">
-                    <input type="password" placeholder="Enter password" id="password">
+                    <input type="password" placeholder="Enter password" name="password">
                 </div>
                 <button type="submit" class="signup-submit">Sign Up</button>
                 <p class="signup-link">
@@ -35,4 +37,5 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="signup.js"></script>
 </body>
+
 </html>
