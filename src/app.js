@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const app = express()
-const ejs = require("ejs")
+const ejs = require("ejs");
 const path = require("path");
 const port = 3000;
 
