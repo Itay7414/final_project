@@ -270,7 +270,7 @@ app.post("/vegetables", async (req, res) => {
   }
 })
 
-//ADD vegetables
+//ADD others
 app.get("/others", (req, res) => {
   res.render("others", { alertMessage: "" });
   console.log("ok")
