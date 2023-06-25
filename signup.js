@@ -1,5 +1,6 @@
-$(document).ready(function() {
-  $('#signup-form').submit(function(e) {
+
+$(document).ready(function () {
+  $('#signup-form').submit(function (e) {
     e.preventDefault();
 
     // Collect form data
@@ -9,19 +10,26 @@ $(document).ready(function() {
       // Add more fields as needed
     };
 
-    // Send an AJAX request to the server
-    $.ajax({
-      type: 'POST',
-      url: '/signup', // Server-side route to handle signup
-      data: formData,
-      success: function(response) {
-        // Redirect to the home page or show a success message
-        window.location.href = '/'; // Replace with your desired URL
-      },
-      error: function(error) {
-        console.log(error);
-        // Handle error
+    // Submit the form by creating a hidden form and triggering its submission
+    var hiddenForm = document.createElement('form');
+    hiddenForm.style.display = 'none';
+    hiddenForm.method = 'POST';
+    hiddenForm.action = '/users'; // Server-side route to handle signup and store user data in the "users" collection
+
+    // Create form fields and append them to the hidden form
+    for (var key in formData) {
+      if (formData.hasOwnProperty(key)) {
+        var field = document.createElement('input');
+        field.type = 'hidden';
+        field.name = key;
+        field.value = formData[key];
+        hiddenForm.appendChild(field);
       }
-    });
+    }
+
+    // Append the hidden form to the document body and submit it
+    document.body.appendChild(hiddenForm);
+    hiddenForm.submit();
   });
 });
+
