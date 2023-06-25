@@ -3,12 +3,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const app = express();
-
+const dbName = 'Shukis-Yarkania1';
 // MongoDB connection URL
-const mongoURL = 'mongodb+srv://mosacho1408:Mosacho1408@cluster0.7ygedx4.mongodb.net/Shukis-Yarkania?retryWrites=true&w=majority'; // Replace with your actual MongoDB connection string
-
+const mongoURL = `mongodb+srv://mosacho1408:Mosacho1408@cluster0.7ygedx4.mongodb.net/${dbName}`;
 // Database and collection names
-const dbName = 'Shukis-Yarkania';
+
 const itemCollectionName = 'items';
 const userCollectionName = 'users';
 
@@ -17,9 +16,9 @@ mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB successfully'))
   .catch((err) => console.error('Failed to connect to MongoDB:', err));
 
-  mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connected to the database'))
-  .catch((err) => console.error('Failed to connect to the database:', err));
+  // mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  // .then(() => console.log('Connected to the database'))
+  // .catch((err) => console.error('Failed to connect to the database:', err));
 
 // Define item schema and model
 const itemSchema = new mongoose.Schema({

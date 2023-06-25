@@ -1,15 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
-const app = express()
-const ejs = require("ejs");
-const path = require("path");
-const port = 3000;
 
-// Middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(cookieParser());
+const app = express();
+const port = 3000;
 
 // Connect to the MongoDB database
 mongoose.connect('mongodb+srv://mosacho1408:Mosacho1408@cluster0.7ygedx4.mongodb.net/Shukis-Yarkania?retryWrites=true&w=majority', {
@@ -23,14 +17,10 @@ mongoose.connect('mongodb+srv://mosacho1408:Mosacho1408@cluster0.7ygedx4.mongodb
     console.log('Error connecting to the database:', error);
   });
 
-// Create a user schema and model
-const userSchema = new mongoose.Schema({
-  email: { type: String, required: true },
-  password: { type: String, required: true }
-});
-
-const User = mongoose.model('User', userSchema);
-
+// Middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cookieParser());
 
 // Create a cart schema and model
 const cartSchema = new mongoose.Schema({
@@ -64,31 +54,7 @@ app.post('/add-to-cart', (req, res) => {
     });
 });
 
-// Route for handling the signup form submission
-app.post('/signup', (req, res) => {
-  // Retrieve the email and password from the request body
-  const { email, password } = req.body;
-
-  // Create a new user instance
-  const newUser = new User({
-    email: email,
-    password: password
-  });
-
-  // Save the user to the database
-  newUser.save()
-    .then(() => {
-      res.status(200).send('User registered successfully');
-    })
-    .catch((error) => {
-      console.error('Failed to register user:', error);
-      res.status(500).send('Failed to register user');
-    });
-});
-
-
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-
