@@ -30,6 +30,14 @@ const cartSchema = new mongoose.Schema({
 
 const Cart = mongoose.model('Cart', cartSchema);
 
+// Create a user schema and model
+const userSchema = new mongoose.Schema({
+  email: { type: String, required: true },
+  password: { type: String, required: true }
+});
+
+const User = mongoose.model('User', userSchema);
+
 // Set up the route to handle adding items to the cart
 app.post('/add-to-cart', (req, res) => {
   const { product, weight } = req.body;
@@ -51,6 +59,29 @@ app.post('/add-to-cart', (req, res) => {
     .catch((error) => {
       console.log('Error adding item to cart:', error);
       res.status(500).send('Error adding item to cart');
+    });
+});
+
+// Set up the route to handle user signup
+app.post('/signup', (req, res) => {
+  const { email, password } = req.body;
+
+  // Validate the email and password
+  if (!email || !password) {
+    res.status(400).json({ error: 'Invalid email or password' });
+    return;
+  }
+
+  // Create a new user
+  const newUser = new User({ email, password });
+
+  // Save the user to the database
+  newUser.save()
+    .then(() => {
+      res.status(201).json(newUser);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: 'Failed to save user to database' });
     });
 });
 
